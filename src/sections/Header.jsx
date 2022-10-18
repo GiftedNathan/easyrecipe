@@ -7,7 +7,7 @@ const Navbar = styled.div`
     /* background-color: #61a734; */
     background-color: #e3effb;
     border-bottom: 1px solid #fefefe;
-    /* padding: 30px; */
+    padding-left: 60px;
 
 `
 const Logo = styled.a`
@@ -20,13 +20,13 @@ const Logo = styled.a`
 
 const LogoImage = styled.img`
     width: 60px;
-
     margin: 15px;
+    
 `;
 const Header = () => {
     return (
         <Navbar>
-            <Logo> <LogoImage src={chefCap} alt="recipe-log" /> easy <span>Resipe</span></Logo>
+            <Logo> <LogoImage src={chefCap} alt="recipe-log" /> easy<span>Resipe</span></Logo>
         </Navbar>
     )
 } 

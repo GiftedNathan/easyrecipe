@@ -14,8 +14,9 @@ const HeroSection = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
 
-  padding: 30px 160px;
+  padding: 60px 160px;
   /* background-color: #61a734; */
 
   background-color: #e3effb;
@@ -23,14 +24,14 @@ const HeroSection = styled.div`
   .left{
     /* flex: 1; */
     max-width: 340px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     
   }
   .left h1{
     width: fit-content;
     font-family: 'Inspiration', cursive;
-    font-size: 62px;
-    text-transform: capitalize;
+    font-size: 4rem;
+    /* text-transform: capitalize; */
     letter-spacing: 5px;
     color: #ff5a00;
     position: relative;
@@ -48,6 +49,11 @@ const HeroSection = styled.div`
     color: #61a734;
     
   }
+  .left p{
+    margin: 20px 0px;
+    font-size: 18px;
+    line-height: 27px;
+  }
 
   .right{
     display: flex;
@@ -59,7 +65,7 @@ const HeroSection = styled.div`
 
   .right img{
     width: 400px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
   }
 
   
@@ -69,9 +75,9 @@ const Hero = () => {
   return (
     <HeroSection>
       <div className="left">
-        <h1>easy recipe</h1>
+        <h1>easyRecipe</h1>
         <p>
-          how your food is prepared have a major impact 
+          How your food is prepared has a major impact 
           on your mental and emotional health as well as your growth.
         </p>
       </div>
