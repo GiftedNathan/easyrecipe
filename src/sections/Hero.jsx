@@ -10,28 +10,26 @@ const HeroSection = styled.div`
   width: 100%;
   min-height: 100vh;
 
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  column-gap: 0px;
+  row-gap: 10px;
 
-  padding: 60px 160px;
-  /* background-color: #61a734; */
+
+  padding: 60px 30px;
 
   background-color: #e3effb;
 
   .left{
-    /* flex: 1; */
-    max-width: 340px;
-    /* border: 1px solid gray; */
+    max-width: 440px;
     
   }
   .left h1{
     width: fit-content;
     font-family: 'Inspiration', cursive;
     font-size: 4rem;
-    /* text-transform: capitalize; */
     letter-spacing: 5px;
     color: #ff5a00;
     position: relative;
@@ -40,9 +38,9 @@ const HeroSection = styled.div`
     position: absolute;
     content: 'fresh food';
     top: 0px;
-    right: -50px;
+    right: -40px;
 
-    font-family: poppins;
+    font-family: Poppins, Helvetica, sans-serif;
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -51,21 +49,16 @@ const HeroSection = styled.div`
   }
   .left p{
     margin: 20px 0px;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .right{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* flex: 1; */
-    width: 50%;
+    max-width: 540px;
   }
 
   .right img{
-    width: 400px;
-    /* border: 1px solid gray; */
+    width: 100%;
   }
 
   
@@ -74,16 +67,16 @@ const HeroSection = styled.div`
 const Hero = () => {
   return (
     <HeroSection>
-      <div className="left">
+      <article className="left">
         <h1>easyRecipe</h1>
         <p>
           How your food is prepared has a major impact 
           on your mental and emotional health as well as your growth.
         </p>
-      </div>
-      <div className="right">
-        <img src={chefLady} alt="" />
-      </div>
+      </article>
+      <article className="right">
+        <img src={chefLady} alt="chef man" />
+      </article>
     </HeroSection>
   )
 }

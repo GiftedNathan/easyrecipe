@@ -4,10 +4,27 @@ import chefCap from "../assets/images/chef-cap.png"
 
 const Navbar = styled.div`
     width: 100%;
-    /* background-color: #61a734; */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
     background-color: #e3effb;
     border-bottom: 1px solid #fefefe;
-    padding-left: 60px;
+
+    .nav{
+        list-style: none;
+    }
+    .nav .nav-link{
+        padding: 5px 10px;
+        text-transform: capitalize;
+
+        color: #fefefe;
+        background-color: #ff5a00;
+        border-radius: 10px;
+        cursor: pointer;
+    }
 
 `
 const Logo = styled.a`
@@ -20,13 +37,16 @@ const Logo = styled.a`
 
 const LogoImage = styled.img`
     width: 60px;
-    margin: 15px;
+    margin-right: 15px;
     
 `;
 const Header = () => {
     return (
         <Navbar>
             <Logo> <LogoImage src={chefCap} alt="recipe-log" /> easy<span>Resipe</span></Logo>
+            <ul className="nav">
+                <li className="nav-link">recipes</li>
+            </ul>
         </Navbar>
     )
 } 
