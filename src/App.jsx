@@ -11,7 +11,7 @@ function App() {
 
       <Header />
       
-      <Hero />
+      {/* <Hero /> */}
 
       <Features />
 
