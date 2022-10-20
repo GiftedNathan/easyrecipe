@@ -2,7 +2,7 @@
 import './App.css'
 import Header from './sections/Header'
 import Hero from './sections/Hero'
-import About from './sections/About'
+import Features from './sections/Features'
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
       
       <Hero />
 
-      <About />
+      <Features />
 
 
     </div>

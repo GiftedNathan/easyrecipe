@@ -6,7 +6,7 @@ import chefLady from '../assets/images/chef-man.png'
 
 // font-family: 'Fuzzy Bubbles', cursive;
 
-const HeroSection = styled.div`
+const HeroSection = styled.section`
   width: 100%;
   min-height: 100vh;
 
