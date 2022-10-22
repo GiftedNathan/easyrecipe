@@ -30,7 +30,7 @@ const Wrapper = styled.article`
         border-radius: 50%;
         background-color: white;
 
-        box-shadow: 5px 5px 20px ;
+        box-shadow: inset 5px 5px 20px ;
 
         z-index: 2;
 
@@ -43,6 +43,7 @@ const Wrapper = styled.article`
     }
     h3{
         text-transform: capitalize;
+        color: #ff5a00;
         margin: 20px 0px;
         z-index: 2;
     }
@@ -61,14 +62,17 @@ const Wrapper = styled.article`
         left: 0;
 
         width: 100%;
-        height: 55%;
+        height: 100%;
 
         background-color: white;
+
         border-radius: 15px;
-        /* opacity: .5; */
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+
         z-index: 1;
 
-        box-shadow: 5px 5px 20px ;
+        box-shadow: 1px 1px 20px #3d3d3d, -1px -1px 20px #61a734;
 
     }
     
@@ -91,7 +95,7 @@ const Feature = ({image, title, text}) => {
 Feature.defaultProps = {
     image: null,
     title: 'defalt Title',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis officiis at dignissimos asperiores, optio est ut quisquam eligendi quia. Vitae voluptatibus laboriosam, ducimus ab dignissimos fugiat sint voluptatum similique omnis.'
+    text: 'Lorem ipsum dbitdignissimos asperiores, optio est ut quisquam eligendi quia. Vitae voluptatibus laboriosam, ducimus ab dignissimos fugiat sint voluptatum similique omnis.'
 }
 
 export default Feature

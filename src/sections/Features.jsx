@@ -17,15 +17,12 @@ const FeatureSection  = styled.section`
     min-height: 100vh;
 
     display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     gap: 20px;
     
-
     /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    
     grid-gap: 10px; */
 
     padding: 60px 30px;
@@ -61,6 +58,16 @@ const FeatureSection  = styled.section`
         max-width: 600px;
     }
 `
+const FeaturesWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 30px;
+
+    margin: 0px auto;
+    max-width: 1060px;
+`
 
 const Features = () => {
 
@@ -72,48 +79,49 @@ const Features = () => {
             <p className='feature-text'>A cross section of what our recipes are like. A trial will convince you! </p>
         </div>
 
+        <FeaturesWrapper>
+            <Feature 
+                image = {testedImage} 
+                title = {'tested'}  
+                text = {'tested and trusted food recipes that appeal to families and friends'}
+            
+            />
 
-        <Feature 
-            image = {testedImage} 
-            title = {'tested'}  
-            text = {'tested and trusted food recipes that appeal to families and friends'}
-        
-        />
+            <Feature 
+                image = {instructionsImage}
+                title = {'instructions'}
+                text = {'directions for combining and processing (cooking) ingredients'}
+            
+            />
+            
+            <Feature 
+                image={ingredientsImage} 
+                title={'ingredients'}  
+                text={'list of all ingredients with quantity required in order of use'}
+            
+            />
 
-        <Feature 
-            image = {instructionsImage}
-            title = {'instructions'}
-            text = {'directions for combining and processing (cooking) ingredients'}
-        
-        />
-        
-        <Feature 
-            image={ingredientsImage} 
-            title={'ingredients'}  
-            text={'list of all ingredients with quantity required in order of use'}
-        
-        />
+            <Feature 
+                image={videoImage} 
+                title={'video'}  
+                text={'simple step by step video for better explanation'}
+            
+            />
+            
+            <Feature 
+                image={utencilesImage} 
+                title={'utensils'}  
+                text={'list of all utensils and other material needed'}
+            
+            />
 
-        <Feature 
-            image={videoImage} 
-            title={'video'}  
-            text={'simple step by step video for better explanation'}
-        
-        />
-        
-        <Feature 
-            image={utencilesImage} 
-            title={'utenciles'}  
-            text={'list of all utenciles and other material needed'}
-        
-        />
-
-        <Feature 
-            image={recipeImage} 
-            title={'200 plus'}  
-            text={'200 + recipes across several continents and countries'}
-        
-        />
+            <Feature 
+                image={recipeImage} 
+                title={'200 plus'}  
+                text={'200 + recipes across several continents and countries'}
+            
+            />
+        </FeaturesWrapper>
         
         
     </FeatureSection>
