@@ -43,7 +43,7 @@ const LogoImage = styled.img`
 const Header = () => {
     return (
         <Navbar>
-            <Logo> <LogoImage src={chefCap} alt="recipe-log" /> easy<span>Resipe</span></Logo>
+            <Logo> <LogoImage src={chefCap} alt="recipe-log" /> easy<span>Recipe</span></Logo>
             <ul className="nav">
                 <li className="nav-link">recipes</li>
             </ul>
