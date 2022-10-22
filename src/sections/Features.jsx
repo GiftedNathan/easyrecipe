@@ -110,8 +110,8 @@ const Features = () => {
             
             <Feature 
                 image={utencilesImage} 
-                title={'utenciles'}  
-                text={'list of all utenciles and other material needed'}
+                title={'utensils'}  
+                text={'list of all utensils and other material needed'}
             
             />
 

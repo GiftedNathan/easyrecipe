@@ -95,7 +95,7 @@ const Feature = ({image, title, text}) => {
 Feature.defaultProps = {
     image: null,
     title: 'defalt Title',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis officiis at dignissimos asperiores, optio est ut quisquam eligendi quia. Vitae voluptatibus laboriosam, ducimus ab dignissimos fugiat sint voluptatum similique omnis.'
+    text: 'Lorem ipsum dbitdignissimos asperiores, optio est ut quisquam eligendi quia. Vitae voluptatibus laboriosam, ducimus ab dignissimos fugiat sint voluptatum similique omnis.'
 }
 
 export default Feature
