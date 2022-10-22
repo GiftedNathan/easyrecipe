@@ -67,8 +67,8 @@ const Wrapper = styled.article`
         background-color: white;
 
         border-radius: 15px;
-        border-top-left-radius: 40%;
-        border-top-right-radius: 40%;
+        /* border-top-left-radius: 40%;
+        border-top-right-radius: 40%; */
 
         z-index: 1;
 
