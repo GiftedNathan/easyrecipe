@@ -83,6 +83,10 @@ const Recipes = () => {
       }))
   }, [recipesURL])
 
+  const setAlphabetIndex = (alpha) =>{
+    setRecipesURL(`https://www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`)
+  }
+
   return (
 
     <RecipesContainer>
@@ -113,7 +117,8 @@ const Recipes = () => {
         {/* <Card />
         <Card /> */}
 
-      <RecipeIndex />
+      <RecipeIndex alphabetIndex={(alpha)=>setAlphabetIndex(alpha)}/>
+
       </LatestRecipes>
 
       

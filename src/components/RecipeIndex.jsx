@@ -23,7 +23,7 @@ const Indext = styled.div`
     cursor: pointer;
 `
 
-const RecipeIndex = () => {
+const RecipeIndex = ({alphabetIndex}) => {
 
     const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
@@ -33,7 +33,7 @@ const RecipeIndex = () => {
             {
                 alphabet.map(item => {
                     return(
-                        <Indext key={num++}>
+                        <Indext key={num++} onClick={()=>alphabetIndex(item)}>
                             <h3>{item}</h3>
                         </Indext>
                     )
