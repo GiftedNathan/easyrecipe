@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from '../sections/Header'
+import Card from '../components/Card'
 
 const RecipesContainer = styled.div`
   width: 100%;
-  background-color: goldenrod;
+  background-color: #e3effb;
 `
 
 const RecipeHero = styled.section`
@@ -46,6 +47,13 @@ const RecipeHero = styled.section`
   }
 `
 
+const LatestRecipes = styled.section`
+  width: 100%;
+  padding: 60px 30px;
+
+  background-color: white;
+`
+
 const Recipes = () => {
 
 
@@ -60,6 +68,13 @@ const Recipes = () => {
           <input type="search" name="search-recipe" id="" />
         </form>
       </RecipeHero>
+
+      <LatestRecipes>
+        <Card />
+        <Card />
+        <Card />
+
+      </LatestRecipes>
       
     </RecipesContainer>
   )
