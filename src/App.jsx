@@ -1,26 +1,40 @@
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 import './App.css'
-import Header from './sections/Header'
-import Hero from './sections/Hero'
-import Features from './sections/Features'
-import LatestRecipes from './sections/LatestRecipes'
+import Home from './pages/Home'
+import Recipes from './pages/Recipes'
+
+
+
+const NoMatch = () => {
+  return(
+    <>
+      <h1>NoMatch</h1>
+    </>
+  )
+}
 
 function App() {
 
   return (
-    <div className="contianer">
+    <>
+      <Routes>
+        {/* <Route path="/" element={<Home />}>
+          <Route index element={<Home />} />
+          <Route path="/recipes" element={<Recipes />} />
 
-      <Header />
-      
-      {/* <Hero /> */}
+          <Route path="*" element={<NoMatch />} />
+        </Route> */}
 
-      {/* <Features /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
 
-      <LatestRecipes />
-
-
-    </div>
+    </>
   )
+
+
 }
 
 export default App
