@@ -25,7 +25,7 @@ const CardWrapper = styled.article`
         border-top-right-radius: 10px;
     }
     .body{
-        padding: 20px 30px;
+        padding: 10px 15px;
     }
     .recipeName {
         text-align: left;
@@ -47,9 +47,9 @@ const Card = ({recipeName, recipeInfo, recipeImage}) => {
             <img src={recipeImage} alt={recipeInfo} />
         </div>
         <div class="body">
-            <h3 class="recipeName">
+            <h4 class="recipeName">
                 {recipeName}
-            </h3>
+            </h4>
             <p class="info">{recipeInfo}</p>
         </div>
     </CardWrapper>

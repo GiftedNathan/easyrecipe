@@ -17,8 +17,9 @@ const Indext = styled.div`
     justify-content: center;
     align-items: center;
 
-    background-color: white;
+    background-color: #e3effb;
     border: 1px solid gray;
+    border-radius: 5px;
     cursor: pointer;
 `
 

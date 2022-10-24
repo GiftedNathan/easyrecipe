@@ -49,14 +49,16 @@ const RecipeHero = styled.section`
 `
 
 const LatestRecipes = styled.section`
-  width: 100%;
+  max-width: 1060px;
+  margin: auto;
   padding: 60px 30px;
 
   /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  justify-items: center; */
+  justify-content: center; */
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 
   background-color: white;
 `
@@ -111,9 +113,9 @@ const Recipes = () => {
         {/* <Card />
         <Card /> */}
 
+      <RecipeIndex />
       </LatestRecipes>
 
-      <RecipeIndex />
       
     </RecipesContainer>
   )
