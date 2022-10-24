@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Outlet, Link } from "react-router-dom";
 import chefCap from "../assets/images/chef-cap.png"
 
 
@@ -12,6 +13,8 @@ const Navbar = styled.div`
 
     background-color: #e3effb;
     border-bottom: 1px solid #fefefe;
+
+    /* text-decoration: none; */
 
     .nav{
         list-style: none;
@@ -43,10 +46,14 @@ const LogoImage = styled.img`
 const Header = () => {
     return (
         <Navbar>
-            <Logo> <LogoImage src={chefCap} alt="recipe-log" /> easy<span>Resipe</span></Logo>
+            <Link to="/"><Logo> <LogoImage src={chefCap} alt="recipe-log" /> easy<span>Resipe</span></Logo></Link>
             <ul className="nav">
-                <li className="nav-link">recipes</li>
+                <li className="nav-link"><Link to="/recipes">recipes</Link></li>
             </ul>
+
+            
+            {/* <Outlet /> */}
+
         </Navbar>
     )
 } 
