@@ -15,9 +15,9 @@ const RecipeHero = styled.section`
   padding: 60px 30px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fil, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-items: center;
-  gap: 20px;
+  gap: 10px;
 `
 
 const RecipeInfo = styled.article`
@@ -25,10 +25,11 @@ const RecipeInfo = styled.article`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 440px;
   
 `
 const RecipeImage = styled.article`
-  
+  max-width: 400px;
 `
 
 
@@ -42,7 +43,7 @@ const Recipe = () => {
           <p>another dumy text to descripe the recipe</p>
         </RecipeInfo>
         <RecipeImage>
-          <img src="" alt="" />
+          <img src={dummyImage} alt="" />
         </RecipeImage>
 
       </RecipeHero>
