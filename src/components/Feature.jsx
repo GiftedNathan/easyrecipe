@@ -44,11 +44,12 @@ const Wrapper = styled.article`
     h3{
         text-transform: capitalize;
         color: #ff5a00;
-        margin: 20px 0px;
+        margin: 15px 0px;
         z-index: 2;
     }
     p{
         font-size: 16px;
+        margin-bottom: 30px;
         line-height: 24px;
         
         z-index: 2;
@@ -67,12 +68,13 @@ const Wrapper = styled.article`
         background-color: white;
 
         border-radius: 15px;
+        border-radius: 50%;
         /* border-top-left-radius: 40%;
         border-top-right-radius: 40%; */
 
         z-index: 1;
 
-        box-shadow: 1px 1px 20px #3d3d3d, -1px -1px 20px #61a734;
+        box-shadow: inset 1px 1px 20px green, 1px 1px 20px #3d3d3d, -1px -1px 20px #61a734;
 
     }
     

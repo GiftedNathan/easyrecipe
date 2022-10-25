@@ -31,7 +31,7 @@ const Navbar = styled.div`
     
 
 `
-const Logo = styled.a`
+const Logo = styled.div`
     display: flex;
     align-items: center;
     font-family: 'Inspiration', cursive;

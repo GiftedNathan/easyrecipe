@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { generatePath, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Header from '../sections/Header'
 import Card from '../components/Card'
@@ -100,7 +100,12 @@ const Recipes = () => {
 
   }
 
-  let navigate = useNavigate()
+  
+  const navigate = useNavigate();
+  const routeChange = (id) => {
+    const path = generatePath(PATH_DASHBOARD.general.ViewActivity, { id });
+    navigate(path);
+  };
 
   const ingredients = []
   const measure = []
@@ -123,7 +128,16 @@ const Recipes = () => {
           show ? 
           recipes.map(recipe => {
             return (
-              <Card recipeName={recipe.strMeal} recipeInfo={recipe.strCategory + ' recipe by the ' + recipe.strArea +'(s)'} recipeImage={recipe.strMealThumb} key={recipe.idMeal} onClick={()=>navigate(`/${recipe.idMeal}`)} /> 
+              <Card 
+                recipeName={recipe.strMeal} 
+                recipeInfo={recipe.strCategory + ' recipe by the ' + recipe.strArea +'(s)'} 
+                recipeImage={recipe.strMealThumb} 
+                key={recipe.idMeal} 
+                onClick={()=>routeChange(`${recipe.idMeal}`)} 
+
+                // navigate(`/${recipe.idMeal}`)
+              
+              /> 
             )
 
           })

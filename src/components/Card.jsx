@@ -12,10 +12,12 @@ const CardWrapper = styled.article`
     /* width: 240px; */
 
     border-radius: 10px;
+    border: 5px solid white;
 
-    margin: 20px auto;
     box-shadow: 0px 0px 30px 2px #000;
 
+    cursor: pointer;
+    
     .header {
         width: 100%;
     }
@@ -52,7 +54,7 @@ const Card = ({recipeName, recipeInfo, recipeImage}) => {
 
   return (
     <CardWrapper>
-        <div class="header">
+        <div className="header">
             {/* for the image  */}
             <img src={recipeImage} alt={recipeInfo} />
         </div>
