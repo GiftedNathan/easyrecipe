@@ -3,6 +3,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 import './App.css'
 import Home from './pages/Home'
 import Recipes from './pages/Recipes'
+import Recipe from './pages/Recipe'
 
 
 
@@ -28,6 +29,7 @@ function App() {
 
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
+        <Route path="/:MealId" element={<Recipe />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
 

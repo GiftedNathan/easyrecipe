@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Header from '../sections/Header'
 import Card from '../components/Card'
@@ -33,11 +34,11 @@ const RecipeHero = styled.section`
     margin-bottom: 40px;
   }
 
-  form{
+  .form{
     max-width: 560px;
     min-width: 280px;
   }
-  form input {
+  .form input {
     width: 100%;
     height: 40px;
     padding-left: 15px;
@@ -53,12 +54,15 @@ const LatestRecipes = styled.section`
   margin: auto;
   padding: 60px 30px;
 
-  /* display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  justify-content: center; */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+
+  /* display: flex;
+  flex-wrap: wrap; */
+  /* gap: 10px; */
 
   background-color: white;
 `
@@ -71,6 +75,7 @@ const Recipes = () => {
   const [recipesURL, setRecipesURL] = useState("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
   const [recipes, setRecipes] = useState()
   const [show, setShow] = useState(false)
+  const [search, setSearch] = useState("")
 
   useEffect(() =>{
     fetch(recipesURL)
@@ -87,6 +92,18 @@ const Recipes = () => {
     setRecipesURL(`https://www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`)
   }
 
+  const searchRecipe = (event) =>{
+    if (event.key == 'Enter') {
+      setRecipesURL(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+      
+    }
+
+  }
+
+  let navigate = useNavigate()
+
+  const ingredients = []
+  const measure = []
   return (
 
     <RecipesContainer>
@@ -95,9 +112,9 @@ const Recipes = () => {
         <h1>search your favorite recipes</h1>
         <p>Remember, it takes a good recipe to prapare appealing delicacies.</p>
 
-        <form action="" method="post">
-          <input type="search" name="search-recipe" placeholder="Enter a recipe name " />
-        </form>
+        <div className='form'>
+          <input type="search" placeholder="Enter a recipe name " onChange={e=>setSearch(e.target.value)} onKeyPress={searchRecipe} />
+        </div>
       </RecipeHero>
 
       <LatestRecipes>
@@ -106,7 +123,7 @@ const Recipes = () => {
           show ? 
           recipes.map(recipe => {
             return (
-              <Card recipeName={recipe.strMeal} recipeInfo={recipe.strCategory} recipeImage={recipe.strMealThumb} /> 
+              <Card recipeName={recipe.strMeal} recipeInfo={recipe.strCategory + ' recipe by the ' + recipe.strArea +'(s)'} recipeImage={recipe.strMealThumb} key={recipe.idMeal} onClick={()=>navigate(`/${recipe.idMeal}`)} /> 
             )
 
           })
@@ -117,10 +134,10 @@ const Recipes = () => {
         {/* <Card />
         <Card /> */}
 
-      <RecipeIndex alphabetIndex={(alpha)=>setAlphabetIndex(alpha)}/>
 
       </LatestRecipes>
 
+      <RecipeIndex alphabetIndex={(alpha)=>setAlphabetIndex(alpha)}/>
       
     </RecipesContainer>
   )

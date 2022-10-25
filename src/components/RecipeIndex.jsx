@@ -2,22 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 
 const RecipeIndexWrapper = styled.div`
-    width: 100%;
+    max-width: 1060px;
 
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-
+    margin: 0 auto;
     padding: 60px 30px;
 `
 const Indext = styled.div`
-    width: 40px;
-    height: 40px;
+    width: 30px; 
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: #e3effb;
+
+    background-color: white;
     border: 1px solid gray;
     border-radius: 5px;
     cursor: pointer;

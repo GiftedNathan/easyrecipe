@@ -9,7 +9,7 @@ import Recipes from '../pages/Recipes'
 const CardWrapper = styled.article`
     position: relative;
     background-color: white;
-    width: 240px;
+    /* width: 240px; */
 
     border-radius: 10px;
 
@@ -25,11 +25,21 @@ const CardWrapper = styled.article`
         border-top-right-radius: 10px;
     }
     .body{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
         padding: 10px 15px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        background-color: white;
     }
     .recipeName {
         text-align: left;
         text-transform: uppercase;
+        color: #61a734;
     }
     
     .info{
@@ -46,11 +56,11 @@ const Card = ({recipeName, recipeInfo, recipeImage}) => {
             {/* for the image  */}
             <img src={recipeImage} alt={recipeInfo} />
         </div>
-        <div class="body">
-            <h4 class="recipeName">
+        <div className='body'>
+            <h4 className='recipeName'>
                 {recipeName}
             </h4>
-            <p class="info">{recipeInfo}</p>
+            <p className='info'>{recipeInfo}</p>
         </div>
     </CardWrapper>
   )
