@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Header from '../sections/Header'
 
@@ -35,15 +35,33 @@ const RecipeImage = styled.article`
 
 const Recipe = () => {
   
-  const meaId = useParams()
+  const meaId = useParams().mealID
+
+  const [recipeURL, setRecipeURL] = useState(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meaId}`)
+  const [recipe, setRecipe] = useState([])
+
+  const [fectedRecipe, setFectedRecipe] = useState(false)
+
+  
+  useEffect(() =>{
+    fetch(recipeURL)
+      .then(response => response.json())
+      .then(data => {
+        // console.log(data.meals)
+        setRecipe(data.meals)
+        console.log(recipe)
+        setFectedRecipe(true)
+
+      })
+  }, [recipeURL])
 
   return (
     <RecipeWrapper>
       <Header />
       <RecipeHero>
         <RecipeInfo>
-          <h1>no :{meaId.idMeal}</h1>
-          <h2>a domu name for recipe</h2>
+          <h1>no :{meaId } </h1>
+          <h2>{setFectedRecipe ? recipe.strMeal : "noo" }</h2>
           <p>another dumy text to descripe the recipe</p>
         </RecipeInfo>
         <RecipeImage>

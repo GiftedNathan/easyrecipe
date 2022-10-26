@@ -29,7 +29,7 @@ function App() {
 
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
-        <Route path="recipes/:MealId" element={<Recipe />} />
+        <Route path="recipes/:mealID" element={<Recipe />} />
         {/* </Route> */}
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>

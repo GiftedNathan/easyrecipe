@@ -128,14 +128,15 @@ const Recipes = () => {
           
           show ? 
           recipes.map(recipe => {
+
             return (
-              <Link to={`/recipes/${recipe.idMeal}}`}>
+              <Link to={`/recipes/${recipe.idMeal}`} key={recipe.idMeal} >
                 <Card 
                   recipeName={recipe.strMeal} 
                   recipeInfo={recipe.strCategory + ' recipe by the ' + recipe.strArea +'(s)'} 
                   recipeImage={recipe.strMealThumb} 
                   
-                  key={recipe.idMeal} 
+                  // key={recipe.idMeal} 
                   // onClick={()=>routeChange(`${recipe.idMeal}`)} 
 
                   // navigate(`/${recipe.idMeal}`)
