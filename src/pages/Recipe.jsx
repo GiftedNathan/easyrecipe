@@ -34,11 +34,15 @@ const RecipeImage = styled.article`
 
 
 const Recipe = () => {
+  
+  const meaId = useParams()
+
   return (
     <RecipeWrapper>
       <Header />
       <RecipeHero>
         <RecipeInfo>
+          <h1>no :{meaId.idMeal}</h1>
           <h2>a domu name for recipe</h2>
           <p>another dumy text to descripe the recipe</p>
         </RecipeInfo>

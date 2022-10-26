@@ -28,10 +28,10 @@ function App() {
         </Route> */}
 
         <Route path="/" element={<Home />} />
-        <Route path="/recipes" element={<Recipes />} >
-          <Route path=":MealId" element={<Recipe />} />
-        </Route>
-        <Route path="*" element={<NoMatch />} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="recipes/:MealId" element={<Recipe />} />
+        {/* </Route> */}
+        {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>
 
     </>

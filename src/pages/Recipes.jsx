@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import { generatePath, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
@@ -128,16 +129,19 @@ const Recipes = () => {
           show ? 
           recipes.map(recipe => {
             return (
-              <Card 
-                recipeName={recipe.strMeal} 
-                recipeInfo={recipe.strCategory + ' recipe by the ' + recipe.strArea +'(s)'} 
-                recipeImage={recipe.strMealThumb} 
-                key={recipe.idMeal} 
-                onClick={()=>routeChange(`${recipe.idMeal}`)} 
+              <Link to={`/recipes/${recipe.idMeal}}`}>
+                <Card 
+                  recipeName={recipe.strMeal} 
+                  recipeInfo={recipe.strCategory + ' recipe by the ' + recipe.strArea +'(s)'} 
+                  recipeImage={recipe.strMealThumb} 
+                  
+                  key={recipe.idMeal} 
+                  // onClick={()=>routeChange(`${recipe.idMeal}`)} 
 
-                // navigate(`/${recipe.idMeal}`)
-              
-              /> 
+                  // navigate(`/${recipe.idMeal}`)
+                
+                /> 
+              </Link>
             )
 
           })
