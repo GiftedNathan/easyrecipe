@@ -68,7 +68,8 @@ const ManualSection = styled.section`
     background-color: white;
   }
   .ingredients h3{
-    
+    line-height: 38px;
+    color: #61a734;
   }
   .ingredients p{
     font-size: 17px;
@@ -97,7 +98,18 @@ const ManualSection = styled.section`
     background-color: white;
   }
 
+  .instruction h3{
+    line-height: 38px;
+    color: #61a734;
+  }
+  .instruction p{
+    line-height: 30px;
+  }
 
+`
+
+const VidieoSection = styled.section`
+  max-width: 1060px;
 `
 
 
@@ -180,7 +192,12 @@ const Recipe = () => {
           <p>{recipe.strInstructions}</p>
         </div>
       </ManualSection>
-      Recipe single
+
+      <VidieoSection> 
+        <iframe src={recipe.strYoutube} frameborder="0"></iframe>
+
+      </VidieoSection>
+      
     </RecipeWrapper>
   )
 }
