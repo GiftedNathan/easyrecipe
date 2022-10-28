@@ -121,7 +121,7 @@ const Recipe = () => {
   const [recipe, setRecipe] = useState([])
 
   const [fectedRecipe, setFectedRecipe] = useState(false)
-
+  let videoID = ""
   
   useEffect(() =>{
     fetch(recipeURL)
@@ -143,6 +143,23 @@ const Recipe = () => {
   //   )
   // }
 
+  // if(recipe){
+  //   const recipeVideoURL = recipe.strYoutube
+  //   const splitURL = recipeVideoURL.split("=")
+  //   // const splitURL = recipe.strYoutube.split("=")
+  //   // videoID = splitURL[splitURL.lenght - 1]
+  //   videoID = splitURL[1]
+  // }
+  
+  // const videoID = () =>{
+  //   if (recipe.strYoutube == null ) return null
+  //   let recipeVideoURL = recipe.strYoutube
+  //   let splitURL = recipeVideoURL.split("=")
+  //   ID = splitURL[1]
+  //   console.log(ID)
+  //   return (ID)
+  // }
+ let no = recipe.strYoutube.substr(-11, 11); 
   return (
     <RecipeWrapper>
       <Header />
@@ -156,6 +173,7 @@ const Recipe = () => {
             {recipe.strCategory + ' recipe by the ' 
             + recipe.strArea +'(s)'}. Few ingedients, easy to prepare.
             You will love it trust me.
+            {/* {' <hhhh .>' +  no.split("=") ? no[0] : "nop" } */}
           </p>
         </RecipeInfo>
         
