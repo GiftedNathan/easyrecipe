@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import chefLady from '../assets/images/chef-man.png'
@@ -61,6 +62,18 @@ const HeroSection = styled.section`
     width: 100%;
   }
 
+
+  
+  .cta{
+    margin-top: 30px;
+    padding: 10px 50px;
+    text-transform: capitalize;
+
+    color: #fefefe;
+    background-color: #ff5a00;
+    border-radius: 10px;
+    cursor: pointer;
+  }
   
 `
 
@@ -73,6 +86,7 @@ const Hero = () => {
           How your food is prepared has a major impact 
           on your mental and emotional health as well as your growth.
         </p>
+        <span className='cta-span'><Link to="/recipes" className='cta'>Get Started</Link></span>
       </article>
       <article className="right">
         <img src={chefLady} alt="chef man" />

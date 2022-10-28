@@ -3,9 +3,6 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Header from '../sections/Header'
 
-import dummyImage from '../assets/images/recipe.png'
-
-
 const RecipeWrapper = styled.div`
   width: 100%;
 
@@ -110,7 +107,14 @@ const ManualSection = styled.section`
 
 const VidieoSection = styled.section`
   max-width: 1060px;
+  margin: 0 auto;
+  iframe{
+    width: 100;
+  }
 `
+// end of styled components 
+/////////////////////////////
+/////////////////////////////
 
 
 const Recipe = () => {
@@ -121,7 +125,6 @@ const Recipe = () => {
   const [recipe, setRecipe] = useState([])
 
   const [fectedRecipe, setFectedRecipe] = useState(false)
-  let videoID = ""
   
   useEffect(() =>{
     fetch(recipeURL)
@@ -135,31 +138,17 @@ const Recipe = () => {
       }))
   }, [recipeURL])
 
-  // if (setFectedRecipe == false) {
-  //   return(
-  //     <h2>
-  //       Ooops, let me find your recipe...
-  //     </h2>
-  //   )
-  // }
-
-  // if(recipe){
-  //   const recipeVideoURL = recipe.strYoutube
-  //   const splitURL = recipeVideoURL.split("=")
-  //   // const splitURL = recipe.strYoutube.split("=")
-  //   // videoID = splitURL[splitURL.lenght - 1]
-  //   videoID = splitURL[1]
-  // }
   
-  // const videoID = () =>{
-  //   if (recipe.strYoutube == null ) return null
-  //   let recipeVideoURL = recipe.strYoutube
-  //   let splitURL = recipeVideoURL.split("=")
-  //   ID = splitURL[1]
-  //   console.log(ID)
-  //   return (ID)
-  // }
- let no = recipe.strYoutube.substr(-11, 11); 
+  const videoID = () =>{
+    let recipeVideoURL = recipe.strYoutube
+    let splitURL = recipeVideoURL.split("=")
+    let ID = splitURL[1]
+    console.log(ID)
+    return (ID)
+  }
+  setTimeout(videoID, 9000);
+  
+
   return (
     <RecipeWrapper>
       <Header />
@@ -212,7 +201,10 @@ const Recipe = () => {
       </ManualSection>
 
       <VidieoSection> 
-        <iframe src={recipe.strYoutube} frameBorder="0"></iframe>
+
+
+        {/* <iframe src={`https://www.youtube.com/embed/${vno}`} ></iframe> */}
+        <iframe src={`https://www.youtube.com/embed/${videoID}`} ></iframe>
 
       </VidieoSection>
       
