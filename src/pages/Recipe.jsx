@@ -194,7 +194,7 @@ const Recipe = () => {
       </ManualSection>
 
       <VidieoSection> 
-        <iframe src={recipe.strYoutube} frameborder="0"></iframe>
+        <iframe src={recipe.strYoutube} frameBorder="0"></iframe>
 
       </VidieoSection>
       
